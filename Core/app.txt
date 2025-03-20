@@ -1,0 +1,5 @@
+- Se incluyen las librerías de las tareas.
+- Se definen estructuras con punteros a funciones.
+- Se declara cómo se inicia la función.
+- Hay una función llamada app_update. Esta genera un arreglo de punteros a funciones task.
+- Hay una función llamada HAL_SYSTICK_Callback. Hace cambios en unos registros.
