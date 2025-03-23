@@ -1,3 +1,6 @@
 - Se incluyen librerías.
 - Se declaran macros de tiempos.
 - Se declaran los funcionamientos de la tarea c.
+
+
+PRUEBA DE CONFIGURACION-JORGE
