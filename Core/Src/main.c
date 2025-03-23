@@ -122,6 +122,17 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  /*Se agregó el código bloqueante/no bloqueante (UART con interrupciones), que permite realizar otras tareas, y ejecuta la
+	   * transmision de datos en segundo plano*/
+	    char msg[] = "Mensaje no bloqueante\r\n";
+	    HAL_UART_Transmit_IT(&huart3, (uint8_t*)msg, strlen(msg)); // No bloqueante
+
+	    // Mientras la transmisión ocurre en segundo plano, se puede hacer otra tarea
+	    HAL_GPIO_TogglePin(LD1_GPIO_Port, LD1_Pin); // Parpadeo de LED
+
+	    HAL_Delay(1000); // Pequeña pausa antes de la siguiente transmisión
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
