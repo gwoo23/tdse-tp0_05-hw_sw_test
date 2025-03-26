@@ -1,3 +1,4 @@
 - Se incluyen las librerías.
 - Se inicia la aplicación (app_init).
-- Se invoca app_update.
+- Se invoca a las funciones bloqueantes y no bloqueantes 
+- Se invoca app_update dentro de un bucle infinito.

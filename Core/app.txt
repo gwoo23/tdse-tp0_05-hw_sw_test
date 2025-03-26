@@ -2,4 +2,22 @@
 - Se definen estructuras con punteros a funciones.
 - Se declara cómo se inicia la función.
 - Hay una función llamada app_update. Esta genera un arreglo de punteros a funciones task.
-- Hay una función llamada HAL_SYSTICK_Callback. Hace cambios en unos registros.
+
+
+task_cfg_t
+es un tipo de dato que posee 3 campos: 2 punteros a funciones (init y update de una tarea)
+y un puntero, que funciona como un array de parámetros
+
+
+task_dta_t;
+Es un tipo de dato que posee un campo que es un entero de 32 bits, WCET (Worst Case Execution Time, en microsegundos)
+
+app_init
+Es una función que inicializa las tareas y el campo WCET de task_dta_t
+
+app_update
+lo que hace es actualizar las tareas que se encuentran en un array y los parámetros, además actualiza 
+task_dta_list en función de: task_dta_list[index].WCET < cycle_counter_time_us y luego asigna:
+task_dta_list[index].WCET = cycle_counter_time_us, donde cycle_counter_time_us es una variable interna de update,
+que es un entero de 32 bits. 
+
